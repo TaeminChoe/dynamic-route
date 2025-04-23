@@ -1,9 +1,14 @@
 import React from "react";
 
-export default function App() {
+import Provider from "./components/commons/Provider";
+import RootLayout from "./components/commons/RootLayout";
+
+function App() {
   return (
-    <div>
-      <h1>React Dynamic Routing 연습</h1>
-    </div>
+    <Provider>
+      <RootLayout />
+    </Provider>
   );
 }
+
+export default App;
