@@ -1,14 +1,12 @@
 import React from "react";
 
 import Provider from "./components/commons/Provider";
-import RootLayout from "./components/commons/RootLayout";
+import AppRoutes from "./route/Routes";
 
-function App() {
+export default function App() {
   return (
     <Provider>
-      <RootLayout />
+      <AppRoutes />
     </Provider>
   );
 }
-
-export default App;

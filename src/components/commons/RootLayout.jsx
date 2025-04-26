@@ -1,32 +1,22 @@
 import Sidebar from "@/components/commons/Sidebar";
-import Navigation from "@/components/commons/Navigation";
-import AppRoutes from "@/route/Routes";
-import { BrowserRouter } from "react-router-dom";
+import Header from "./Header";
 
-const RootLayout = () => {
+export default function RootLayout({ children }) {
   return (
-    <BrowserRouter>
-      <div className="flex h-screen">
-        {/* Sidebar */}
-        <aside className="w-60 bg-gray-800 text-white p-4">
-          <Sidebar />
-        </aside>
+    <div className="flex h-screen">
+      {/* Sidebar */}
+      <aside className="w-60 bg-gray-800 text-white p-4">
+        <Sidebar />
+      </aside>
 
-        {/* Main Content */}
-        <div className="flex-1 flex flex-col">
-          {/* Top Navigation */}
-          <header className="h-16 bg-white shadow px-6 flex items-center justify-between">
-            <Navigation />
-          </header>
+      {/* Main Content */}
+      <div className="flex-1 flex flex-col">
+        {/* Top Navigation */}
+        <Header />
 
-          {/* Route Content */}
-          <main className="flex-1 overflow-auto bg-gray-50 p-6">
-            <AppRoutes />
-          </main>
-        </div>
+        {/* Route Content */}
+        <main className="flex-1 overflow-auto bg-gray-50 p-6">{children}</main>
       </div>
-    </BrowserRouter>
+    </div>
   );
-};
-
-export default RootLayout;
+}
